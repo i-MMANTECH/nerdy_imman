@@ -3,48 +3,40 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const contactItems = [
-        { src: "/Footer/telephone.png", alt: "Mobile", data: "+91 9876543210" },
-        { src: "/Footer/email.png", alt: "Email", data: "shoevista@gmail.com" },
-        { src: "/Footer/pin.png", alt: "Address", data: "ShoeVista, 45 Sapphire Road, Sector 22, <br />Gurgaon, Haryana, 122018, India" },
+        { src: "/Footer/telephone.png", alt: "Mobile", data: "+91 XXXXXXXXXX" },
+        { src: "/Footer/email.png", alt: "Email", data: "contact@emmanuelaro.dev" },
+        { src: "/Footer/pin.png", alt: "Address", data: "Portfolio Project • Developed with React & Node.js" },
 
     ]
     return (
-        <footer className='bg-gray-50 flex flex-col items-start w-full mx-auto p-4 pb-2 mt-8 text-sm'>
-            <div className='flex justify-between flex-col items-start mt-6 md:flex-row md:justify-around md:w-full'>
+        <footer className='bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col items-start w-full mx-auto p-6 pb-3 mt-12 text-sm border-t-2 border-slate-700/50'>
+            <div className='flex justify-between flex-col items-start mt-6 md:flex-row md:justify-around md:w-full gap-8'>
                 <ul className='flex justify-center items-start gap-4 flex-col'>
-                    <li className='font-semibold text-base'>Links </li>
-                    <li><Link to="/about-us" className='hover:border-b-2 border-black'>About us</Link></li>
-                    <li><Link to="/cart" className='hover:border-b-2 border-black'>Cart </Link></li>
-                    <li><Link to="/wishlist" className='hover:border-b-2 border-black'>Wishlist</Link></li>
+                    <li className='font-bold text-lg text-blue-400 tracking-wide'>Navigation</li>
+                    <li><Link to="/about-us" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>About Project</Link></li>
+                    <li><Link to="/cart" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>Shopping Cart</Link></li>
+                    <li><Link to="/wishlist" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>My Wishlist</Link></li>
                 </ul>
                 <ul className='flex justify-center items-start gap-4 flex-col'>
-                    <li  className='font-semibold text-base'>Sections</li>
-                    <li><Link to="/shoes/men" className='hover:border-b-2 border-black'>Men</Link></li>
-                    <li><Link to="/shoes/women" className='hover:border-b-2 border-black'>Women </Link></li>
-                    <li><Link to="/shoes/kids" className='hover:border-b-2 border-black'>Kids</Link></li>
-                    
+                    <li className='font-bold text-lg text-blue-400 tracking-wide'>Collections</li>
+                    <li><Link to="/shoes/men" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>👟 Men\'s Shoes</Link></li>
+                    <li><Link to="/shoes/women" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>👠 Women\'s Shoes</Link></li>
+                    <li><Link to="/shoes/kids" className='text-slate-300 hover:text-blue-400 transition-all duration-300 border-b-2 border-transparent hover:border-blue-400 pb-1'>👶 Kids\' Shoes</Link></li>
                 </ul>
                 <div className='py-4 md:p-0'>
-                    <p  className='font-semibold md:text-base'>Contact Us:</p>
-                    <div className='flex'>
-                        <div className='flex flex-col items-baseline justify-center '>
-                            {
-                                contactItems.map((elem, id) => (
-                                    <div className='flex mt-1' key={id}>
-                                        <img src={elem.src} alt={elem.alt} className='w-4 h-4 md:w-6 md:h-6 inline mr-2 mb-1' />
-                                        <p dangerouslySetInnerHTML={{ __html: elem.data }} />
-                                    </div>
-                                ))
-                            }
-                        </div>
+                    <p className='font-bold text-lg text-blue-400 tracking-wide mb-3'>Get in Touch</p>
+                    <div className='flex flex-col items-baseline justify-center gap-3'>
+                        {
+                            contactItems.map((elem, id) => (
+                                <div className='flex items-center' key={id}>
+                                    <img src={elem.src} alt={elem.alt} className='w-5 h-5 md:w-6 md:h-6 mr-3 filter brightness-0 invert opacity-75 hover:opacity-100 transition-opacity' />
+                                    <p dangerouslySetInnerHTML={{ __html: elem.data }} className='text-slate-300 hover:text-blue-400 transition-colors' />
+                                </div>
+                            ))
+                        }
                     </div>
-
                 </div>
             </div>
-            <p className='mt-4 self-center'>© {new Date().getFullYear()} <span>ShoeVista </span> | Jaswant Yadav</p>
+            <hr className='w-full my-6 border-slate-700/50' />
+            <p className='self-center text-slate-400 text-xs md:text-sm'>© {new Date().getFullYear()} <span className='text-blue-400 font-bold'>Emmanuel Aro</span> • Full-Stack E-Commerce Portfolio • <span className='text-slate-300'>React • Node.js • MongoDB</span></p>
         </footer>
-
-    )
-}
-
-export default Footer

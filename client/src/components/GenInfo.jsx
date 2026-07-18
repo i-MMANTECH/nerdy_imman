@@ -26,17 +26,19 @@ const GenInfo = () => {
     ];
 
     return (
-        <div className='flex justify-center items-center my-20'>
-            <ul className='grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-screen-lg'>
+        <div className='flex justify-center items-center my-20 px-4'>
+            <ul className='grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-screen-2xl'>
                 {
                     data.map((elem, id) => (
-                        <li className='flex flex-col items-center bg-white p-4' key={id}>
-                            <div className='flex-shrink-0 mb-2'>
-                                <img src={elem.src} alt={elem.title} className='h-16 w-16  rounded-full bg-slate-200' />
+                        <li key={id} className='flex flex-col items-center bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200'>
+                            <div className='flex-shrink-0 mb-4'>
+                                <div className='w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg'>
+                                    <img src={elem.src} alt={elem.title} className='h-10 w-10 filter invert' />
+                                </div>
                             </div>
                             <div className='text-center'>
-                                <p className='text-sm uppercase font-semibold'>{elem.title}</p>
-                                <p className='text-xs text-gray-500'>{elem.text}</p>
+                                <p className='text-sm uppercase font-bold text-slate-900 tracking-wider'>{elem.title}</p>
+                                <p className='text-xs text-slate-600 mt-1'>{elem.text}</p>
                             </div>
                         </li>
                     ))
@@ -59,25 +61,25 @@ export const Brands = ({ title = "Top Brands" }) => {
     ];
 
     return (
-        <div className='flex flex-col items-center my-16 w-full'>
-            <p className='text-2xl font-bold mb-6'>{title}</p>
-            <div className='flex flex-wrap justify-center'>
+        <div className='flex flex-col items-center my-16 w-full px-4'>
+            <p className='text-3xl md:text-4xl font-bold mb-8 text-slate-900'>Featured Collections</p>
+            <div className='flex flex-wrap justify-center gap-6 max-w-6xl'>
                 {data.map((elem, id) => (
-                    <div key={id} className='relative w-[340px] h-[340px] mx-2 mb-6 hover:text-white'>
-                        <div className='absolute w-full flex justify-center items-center top-4  '>
-                            <p className='logo font-semibold z-50 '>{elem.name}</p>
+                    <div key={id} className='relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group'>
+                        <div className='absolute w-full flex justify-center items-center top-4 z-20'>
+                            <p className='logo font-bold text-2xl text-white drop-shadow-lg group-hover:text-blue-300 transition-colors'>{elem.name}</p>
                         </div>
                         <img
                             src={elem.src}
                             alt={elem.name}
-                            className='w-full h-full object-cover'
+                            className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
                         />
                         <button
                             onClick={() => navigate(elem.to)}
                             className='absolute inset-0 flex items-center justify-center
-                             bg-gray-800 text-white opacity-0 hover:opacity-80 transition-opacity duration-200'
+                             bg-gradient-to-r from-slate-900/80 to-black/80 text-white opacity-0 hover:opacity-100 transition-all duration-300 font-semibold text-lg hover:tracking-wider'
                         >
-                            Explore →
+                            Explore Collection →
                         </button>
                     </div>
                 ))}

@@ -18,16 +18,16 @@ const Search = () => {
     };
 
     return (
-        <form onSubmit={handleSearch} className='flex items-center border-2 rounded-sm border-gray-400 '>
+        <form onSubmit={handleSearch} className='flex items-center border-2 rounded-lg border-slate-400 bg-slate-700 hover:bg-slate-600 transition-colors'>
             <input
                 type="search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder='Search...'
-                className='pl-2'
+                className='pl-2 py-1 bg-slate-700 text-white placeholder-slate-400 outline-none text-sm'
             />
-            <button type="submit">
-                <img src="/Navbar/search.png" alt="Search" className='w-6 h-6 rounded-sm hover:scale-110' />
+            <button type="submit" className='hover:scale-110 transition-transform'>
+                <img src="/Navbar/search.png" alt="Search" className='w-5 h-5 rounded-sm filter brightness-0 invert mr-1' />
             </button>
         </form>
     );

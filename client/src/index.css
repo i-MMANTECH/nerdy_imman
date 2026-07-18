@@ -51,3 +51,71 @@
 .scroll-container::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar {
     background: #777777;
 }
+
+/* Premium animations and transitions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleHover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Product card enhancements */
+.product-card {
+    @apply transition-all duration-300 hover:shadow-2xl;
+}
+
+.product-card:hover {
+    animation: scaleHover 0.3s ease-out forwards;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300;
+}
+
+.btn-primary:hover {
+    @apply from-blue-700 to-blue-600 shadow-lg;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
