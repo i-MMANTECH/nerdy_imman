@@ -40,3 +40,7 @@ const Footer = () => {
             <hr className='w-full my-6 border-slate-700/50' />
             <p className='self-center text-slate-400 text-xs md:text-sm'>© {new Date().getFullYear()} <span className='text-blue-400 font-bold'>Emmanuel Aro</span> • Full-Stack E-Commerce Portfolio • <span className='text-slate-300'>React • Node.js • MongoDB</span></p>
         </footer>
+    )
+}
+
+export default Footer
